@@ -1,0 +1,20 @@
+name: build_application
+on: push
+jobs:
+  build:
+      runs-on: ubuntu-latest
+      steps:
+        - name: checkout_code
+          uses: actions/checkout@v3
+        - name: install dependencies
+          run: npm ci
+        - name: lint_code
+          run: npm lint
+        - name: test_code
+          run: npm test
+  Deploy:
+      runs-on: ubuntu-latest
+      steps:
+        - name: deploy
+          run: echo "deploying"
+        

@@ -1,0 +1,9 @@
+name: output_information
+on: push
+jobs:
+    info:
+      runs-on: ubuntu-latest
+      steps:
+        - name: gather_facts
+          run: echo "{{ github }}"
+    

@@ -5,5 +5,5 @@ jobs:
       runs-on: ubuntu-latest
       steps:
         - name: gather_facts
-          run: echo "{{ github }}"
+          run: echo "${{ github }}"
     

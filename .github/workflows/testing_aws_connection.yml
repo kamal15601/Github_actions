@@ -23,14 +23,14 @@ jobs:
       - name: Verify AWS Identity
         run: aws s3 ls
       - name: Build Docker image
-        run: docker build -t my-app .
+        run: docker build -t myapp .
 
       - name: Tag Docker image
-        run: docker tag my-app:latest 207567756200.dkr.ecr.us-east-1.amazonaws.com/my-app:latest
+        run: docker tag myapp:latest 207567756200.dkr.ecr.us-east-1.amazonaws.com/my-app:latest
       
       - name: Push Docker image to ECR
         run: |
           aws ecr get-login-password --region us-east-1 | \
             docker login --username AWS --password-stdin  207567756200.dkr.ecr.us-east-1.amazonaws.com
-          docker push  207567756200.dkr.ecr.us-east-1.amazonaws.com/my-app:latest
+          docker push  207567756200.dkr.ecr.us-east-1.amazonaws.com/myapp:latest
 

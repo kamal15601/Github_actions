@@ -26,8 +26,9 @@ jobs:
         run: docker build -t myapp .
 
       - name: Tag Docker image
-        run: docker tag myapp:latest 207567756200.dkr.ecr.us-east-1.amazonaws.com/my-app:latest
-      
+        run: docker tag myapp 207567756200.dkr.ecr.us-east-1.amazonaws.com/my-app:latest
+      - name: list images
+        run: docker images
       - name: Push Docker image to ECR
         run: |
           aws ecr get-login-password --region us-east-1 | \

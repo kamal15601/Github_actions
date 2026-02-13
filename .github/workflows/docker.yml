@@ -29,6 +29,8 @@ jobs:
               ls -la Dockerfile || true
               echo ".dockerignore:"
               cat .dockerignore || true
+              echo "Run docker build locally style (plain progress):"
+              docker build --progress=plain -f ./Dockerfile -t debug-bankapp .
                       
       - name: Configure AWS Credentials
         uses: aws-actions/configure-aws-credentials@v4

@@ -17,6 +17,12 @@ jobs:
       needs: build
       runs-on: ubuntu-latest
       steps:
-        - name: deploy
-          run: echo "deploying"
+         - name: SonarCloud Scan 
+           uses: SonarSource/sonarcloud-github-action@v2
+           with: 
+             args: >
+               -Dsonar.projectKey=${{ secrets.SONAR_PROJECT_KEY }} 
+               -Dsonar.organization=${{ secrets.SONAR_ORGANIZATION }} 
+               -Dsonar.login=${{ secrets.SONAR_TOKEN }}
+
         

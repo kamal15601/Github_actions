@@ -90,7 +90,7 @@ jobs:
         name: app-jar
         path: app # this will download JAR to ./app folder
     - name: docker build
-      uses: ./docker.yml
+      uses: ./.github/workflows/docker.yml
       with:
         image_tag: latest
 

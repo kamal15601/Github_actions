@@ -25,6 +25,7 @@ jobs:
         uses: docker/setup-qemu-action@v3 
       - name: Set up Docker Buildx 
         uses: docker/setup-buildx-action@v3
+      - uses: actions/checkout@v4
       - name: Build Docker image
         run: docker build -t bank_app .
       - name: Tag Docker image

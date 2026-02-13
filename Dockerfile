@@ -3,6 +3,8 @@ EXPOSE 8080
 ENV APP_HOME=/usr/src/app
 RUN echo "$(pwd)"
 RUN mkdir -p $APP_HOME
+RUN echo "$(pwd)"
+RUN echo "$(ls)"
 COPY app/*.jar $APP_HOME/app.jar
 WORKDIR $APP_HOME
 CMD ["java", "-jar", "app.jar"]

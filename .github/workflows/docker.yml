@@ -40,6 +40,6 @@ jobs:
           context: .
           file: ./Dockerfile
           push: true
-          tags: ${{ secrets.DOCKERHUB_USERNAME }}/bank_app:latest
+          tags: ${{ vars.DOCKERHUB_USERNAME }}/bank_app:latest
 
 

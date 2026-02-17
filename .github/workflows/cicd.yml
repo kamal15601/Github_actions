@@ -94,6 +94,8 @@ jobs:
         path: app # this will download JAR to ./app folder
   Trigger_docker_build_workflow:
     uses: ./.github/workflows/docker.yml
+    secrets: 
+      DOCKERHUB_TOKEN: ${{ secrets.DOCKERHUB_TOKEN }}
     needs: build_docker_image_and_push_toECR
     with:
       image_tag: latest
